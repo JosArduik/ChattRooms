@@ -23,4 +23,4 @@ export const firebaseConfig = {
 ```
 
 # Listo para el despliegue, ahora ya sabes que hacer...
- psst... psst..  (ionic serve)
+ (ionic serve)
