@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" fill="none" (click)="close()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>{{chat.name}}<br><div class="status">En ligne</div></ion-title>
+    <ion-avatar slot="end">
+     <img src="../assets/accounts.png"> 
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="bg"></div>
+
+  <div *ngIf="room">
+    <ion-card *ngFor="let mensaje of room.messages">
+      <ion-card-content>
+        {{mensaje.content}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  
+  <!-- <u *ngIf="room">
+    <li *ngFor="let mensaje of room.messages">{{mensaje.content}}</li>
+  </u>-->
+
+  <!-- <ion-item lines="none"> <div class="bg"></div>
+    <ion-badge color="warning" slot="end" *ngFor="let mensaje of menssages">{{mensaje}}<ion-note color="medium">21:16 </ion-note></ion-badge>
+  </ion-item>
+  
+  <ion-item lines="none">
+    <ion-badge color="light" slot="start" *ngFor="let mensaje of menssages">{{mensaje}}<ion-note color="medium">21:17</ion-note></ion-badge>
+  </ion-item>-->
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-textarea [(ngModel)]="msg" color="primary" placeholder="Escribir mensaje"></ion-textarea>
+    <ion-buttons slot="end">
+      <ion-button (click)="sendMessage()" color="primary"> 
+        Enviar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
